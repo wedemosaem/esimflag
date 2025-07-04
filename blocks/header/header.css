@@ -1,8 +1,17 @@
 /* header and nav layout */
 header .nav-wrapper {
-  /* background-color: var(--background-color); */
-    background-color: #000;
-  color: #FFF;
+  
+  
+  /*** DEMO:  CHANGE HEADER COLOR ***/
+  background-color: var(--background-color);
+    /* background-color: white; */
+
+
+/*** DEMO:  CHANGE HEADER COLOR ***/
+  /* color: #FFF; */
+  color: var(--text-color);
+
+
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -311,8 +320,17 @@ header .header.block nav {
 
 
       background-color: transparent;
-      /* color: var(--text-color); */
-      color: #FFF;
+
+      
+      
+      /*** DEMO:  CHANGE HEADER FONT COLOR ***/
+      color: var(--text-color);
+      /* color: #FFF; */
+
+
+
+
+
       font-weight: 500;
       font-size: var(--body-font-size-s);
 

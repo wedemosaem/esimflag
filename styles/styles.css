@@ -14,8 +14,14 @@
   /* colors */
   --primary-color: rgb(255 234 3);
   --secondary-color: rgb(32 32 32);
-  /* --background-color: white; */
-  --background-color: #000;
+
+
+  /** DEMO: CHANGE OVERAL BACKGROUND COLOR**/
+  --background-color: white;
+  /* --background-color: #000; */
+
+
+
   --light-color: rgb(235 235 235);
   --dark-color: var(--secondary-color);
   --text-color: var(--secondary-color);
@@ -80,8 +86,14 @@ body {
   display: none;
   margin: 0;
   background-color: var(--background-color);
-  /* color: var(--text-color); */
-  color: #FFF;
+  
+  
+  /** DEMO: CHANGE OVERALL FONT COLOR**/
+  color: var(--text-color);
+  /* color: #FFF; */
+
+
+
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
