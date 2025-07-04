@@ -18,7 +18,8 @@
       "cards",
       "columns",
       "fragment",
-      "titlecustom"
+      "titlecustom",
+      "basicbanner"
       
     ]
   },
@@ -42,14 +43,6 @@
       "button",
       "title"
     ]
-  },
-
-  {
-    "id": "eSim Flag",
-    "components": [
-      "basicbanner"   
-    ]
   }
-
   
 ]
