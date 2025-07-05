@@ -161,6 +161,25 @@
     ]
   },
   {
+    "id": "ccols",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
@@ -214,127 +233,5 @@
         "valueType": "string"
       }
     ]
-  },
-
-  { 
-    "id": "content-fragment", 
-    "fields": [ 
-      { 
-        "component": "text-input", 
-        "name": "text", 
-        "value": "", 
-        "label": "Slug", 
-        "valueType": "string" 
-      } 
-    ] 
-
-  } ,
-
-  { 
-    "id": "ficha", 
-    "fields": [ 
-      { 
-        "component": "text-input", 
-        "name": "text", 
-        "value": "", 
-        "label": "Slug", 
-        "valueType": "string" 
-      } 
-    ] 
-
-  },
-  {
-    "id": "titlecustom",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title",
-        "valueType": "string" 
-
-      },
-      {
-        "component": "text",
-        "name": "color",
-        "label": "Color",
-        "valueType": "string" 
-
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      }     
-    ]
-  },
-  {
-    "id": "basicbanner",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "ccols",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
-      }
-    ]
   }
-
-
-
-
-
-
 ]

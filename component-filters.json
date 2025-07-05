@@ -8,8 +8,6 @@
   {
     "id": "section",
     "components": [
-      "ficha",
-      "content-fragment",
       "text",
       "image",
       "button",
@@ -17,17 +15,28 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "titlecustom",
-      "basicbanner",
-      "ccols"
-      
+      "fragment"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "ccols",
+    "components": [
+      "ccols"
+    ]
+  },
+  {
+    "id": "ccols",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -45,5 +54,4 @@
       "title"
     ]
   }
-  
 ]
