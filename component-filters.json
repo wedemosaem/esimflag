@@ -24,6 +24,7 @@
       
     ]
   },
+
   {
     "id": "cards",
     "components": [
@@ -38,6 +39,22 @@
   },
   {
     "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  }
+  },
+  {
+    "id": "rowscols",
+    "components": [
+      "col"
+    ]
+  },
+  {
+    "id": "col",
     "components": [
       "text",
       "image",
