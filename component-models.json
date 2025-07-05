@@ -325,8 +325,8 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "text L",
-        "label": "Text",
+        "name": "textl",
+        "label": "Text L",
         "value": ""
       },
       {
