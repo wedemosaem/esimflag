@@ -311,23 +311,52 @@
         "valueType": "string"
       }
     ]
+  }
   },
   {
-    "id": "rowscols",
+    "id": "threecards",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagel",
+        "label": "Image L",
+        "multi": false
       },
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text L",
+        "label": "Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imagec",
+        "label": "Image C",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "textc",
+        "label": "Text C",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imager",
+        "label": "Image R",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "textr",
+        "label": "Text R",
+        "value": ""
       }
     ]
   }
