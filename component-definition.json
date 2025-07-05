@@ -156,7 +156,100 @@
               }
             }
           }
+        },
+
+        { 
+          "title": "Content Fragment", 
+          "id": "content-fragment", 
+          "plugins": { 
+            "xwalk": { 
+              "page": { 
+                "resourceType": "core/franklin/components/block/v1/block", 
+                "template": { 
+                  "name": "Content Fragment", 
+                  "model": "content-fragment" 
+                } 
+              } 
+            } 
+          } 
+        } ,
+
+        { 
+          "title": "Ficha", 
+          "id": "ficha", 
+          "plugins": { 
+            "xwalk": { 
+              "page": { 
+                "resourceType": "core/franklin/components/block/v1/block", 
+                "template": { 
+                  "name": "ficha", 
+                  "model": "ficha" 
+                } 
+              } 
+            } 
+          } 
+        },
+
+        {
+          "title": "Title Custom",
+          "id": "titlecustom",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "titlecustom",
+                  "model": "titlecustom"
+                }
+              }
+            }
+          }
+        },
+
+        {
+          "title": "Basic Banner",
+          "id": "basicbanner",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "basicbanner",
+                  "model": "basicbanner"
+                }
+              }
+            }
+          }
+        },
+
+        {
+          "title": "Rows Cols",
+          "id": "rowscols",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
       ]
     }
   ]
