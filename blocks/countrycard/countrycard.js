@@ -8,20 +8,19 @@ export default function decorate(block) {
   // 2. Build a UL wrapper
   const ul = document.createElement('ul');
 
-  // 3. For each “row” (i.e. one card’s placeholders)
+  // 3. For each original “row” (one card’s placeholders)
   Array.from(block.children).forEach((row) => {
-    // 3a. Create an LI for this card
     const li = document.createElement('li');
 
-    // 3b. Pull out the three placeholders
+    // 3a. Extract the three placeholders
     const [imgHolder, headingHolder, colorHolder] = Array.from(row.children);
 
-    // 3c. Determine image src & alt
+    // 3b. Determine image src & alt
     const rawImg = imgHolder.querySelector('img');
     const src = rawImg ? rawImg.src : imgHolder.textContent.trim();
     const alt = rawImg?.alt || headingHolder.textContent.trim() || '';
 
-    // 3d. Build an optimized <picture> as background
+    // 3c. Create optimized <picture> as true background
     const picture = createOptimizedPicture(src, alt, false, [
       { width: '1200' },
       { width: '800' },
@@ -30,11 +29,11 @@ export default function decorate(block) {
     picture.classList.add('countrycards-bg');
     li.append(picture);
 
-    // 3e. Extract heading text & color
+    // 3d. Read heading text & color
     const headingText = headingHolder.textContent.trim();
     const textColor = colorHolder.textContent.trim();
 
-    // 3f. Build the overlaid content
+    // 3e. Build the overlaid content
     const content = document.createElement('div');
     content.className = 'countrycard-content';
     content.style.color = textColor;
@@ -48,7 +47,7 @@ export default function decorate(block) {
     content.append(h2, p);
     li.append(content);
 
-    // 3g. Add this card to the UL
+    // 3f. Add this card to the UL
     ul.append(li);
   });
 

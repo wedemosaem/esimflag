@@ -1,6 +1,6 @@
 /* countrycards.css */
 
-.countrycards > ul {
+.countrycards ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
   grid-gap: 24px;
 }
 
-.countrycards > ul > li {
+.countrycards li {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
@@ -17,7 +17,7 @@
 }
 
 /* background <picture> */
-.countrycards-bg {
+.countrycards .countrycards-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
   line-height: 0;
 }
 
-.countrycards-bg img {
+.countrycards .countrycards-bg img {
   display: block;
   width: 100%;
   height: 100%;
@@ -36,24 +36,24 @@
 }
 
 /* text overlay */
-.countrycard-content {
+.countrycards .countrycard-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 20px;
   background: linear-gradient(to top, rgb(0 0 0 / 65%), transparent);
-  color: white;
+  color: white; /* overridden inline by JS if needed */
   z-index: 1;
 }
 
-.countrycard-content h2 {
+.countrycards .countrycard-content h2 {
   margin: 0 0 10px;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
-.countrycard-content p {
+.countrycards .countrycard-content p {
   margin: 0;
   font-size: 0.95rem;
 }
