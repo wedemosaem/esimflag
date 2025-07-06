@@ -1,0 +1,63 @@
+/* Layout wrapper if you want to use a grid of multiple cards */
+.country-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  @media (width >= 600px) {
+    .country-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (width >= 900px) {
+    .country-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* The card itself */
+  .country-card {
+    border: 1px solid #dce1e7;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #fff;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .country-card:hover {
+    /* use modern rgb() with slash and percentage for alpha */
+    box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+  }
+  
+  /* Flag icon */
+  .flag {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Textual info */
+  .country-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .country-name {
+    font-weight: bold;
+    color: #001a33;
+    margin-bottom: 4px;
+  }
+  
+  .country-price {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
