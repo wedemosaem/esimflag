@@ -4,22 +4,11 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
 
-/* full-bleed background via optimized <picture> */
-.customcard-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  line-height: 0;
-}
-
-.customcard-img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  /* full-bleed background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .customcard-content {
