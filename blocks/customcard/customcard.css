@@ -40,3 +40,7 @@
   margin: 0;
   font-size: 0.95rem;
 }
+
+.columns p {
+  margin: 0;
+}
