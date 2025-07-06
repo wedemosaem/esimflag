@@ -21,7 +21,8 @@
       "titlecustom",
       "basicbanner",
       "rowscols",
-      "threecards"
+      "threecards",
+      "customcard"
       
     ]
   },
@@ -44,14 +45,8 @@
       "text",
       "image",
       "button",
-      "title"
-    ]
-  }
-  },
-  {
-    "id": "rowscols",
-    "components": [
-      "col"
+      "title",
+      "customcard"
     ]
   },
   {
@@ -60,7 +55,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "customcard"
     ]
   }
   
