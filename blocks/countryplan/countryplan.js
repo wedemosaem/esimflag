@@ -19,7 +19,7 @@ export default async function decorate(block) {
   const country = segments[segments.length - 1].toLowerCase();
 
   // Fetch GraphQL data
-  const url = `${AEM_HOST}/graphql/execute.json/aem-demo-assets/esim-plan-by-country;country=${country}`;
+  const url = `${AEM_HOST}/graphql/execute.json/aem-demo-assets/esimplan-by-country;country=${country}`;
   let plan;
 
   try {
