@@ -312,53 +312,7 @@
       }
     ]
   },
-  {
-    "id": "threecards",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagel",
-        "label": "Image L",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "textl",
-        "label": "Text L",
-        "value": ""
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imagec",
-        "label": "Image C",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "textc",
-        "label": "Text C",
-        "value": ""
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "imager",
-        "label": "Image R",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "textr",
-        "label": "Text R",
-        "value": ""
-      }
-    ]
-  },
+  
   {
     "id": "customcard",
     "fields": [
