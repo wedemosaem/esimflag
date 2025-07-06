@@ -1,36 +1,58 @@
-// countrycard.js
+// countrycards.js
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
 export default function decorate(block) {
-  block.classList.add('country-card');
+  // 1. Namespace the root
+  block.classList.add('countrycards');
 
-  // 1. Grab the three placeholders (each should be a direct DIV child)
-  const [flagHolder, nameHolder, priceHolder] = Array.from(block.querySelectorAll(':scope > div'));
+  // 2. Build a UL wrapper
+  const ul = document.createElement('ul');
 
-  // 2. Read their values
-  const flagSrc = flagHolder.textContent.trim();
-  const country = nameHolder.textContent.trim();
-  const price = priceHolder.textContent.trim();
+  // 3. For each “row” (i.e. one card’s placeholders)
+  Array.from(block.children).forEach((row) => {
+    // 3a. Create an LI for this card
+    const li = document.createElement('li');
 
-  // 3. Build the flag <img>
-  const img = document.createElement('img');
-  img.className = 'flag';
-  img.src = flagSrc;
-  img.alt = `${country} Flag`;
+    // 3b. Pull out the three placeholders
+    const [imgHolder, headingHolder, colorHolder] = Array.from(row.children);
 
-  // 4. Build the info container
-  const info = document.createElement('div');
-  info.className = 'country-info';
+    // 3c. Determine image src & alt
+    const rawImg = imgHolder.querySelector('img');
+    const src = rawImg ? rawImg.src : imgHolder.textContent.trim();
+    const alt = rawImg?.alt || headingHolder.textContent.trim() || '';
 
-  const nameEl = document.createElement('div');
-  nameEl.className = 'country-name';
-  nameEl.textContent = country;
+    // 3d. Build an optimized <picture> as background
+    const picture = createOptimizedPicture(src, alt, false, [
+      { width: '1200' },
+      { width: '800' },
+      { width: '400' },
+    ]);
+    picture.classList.add('countrycards-bg');
+    li.append(picture);
 
-  const priceEl = document.createElement('div');
-  priceEl.className = 'country-price';
-  priceEl.textContent = price;
+    // 3e. Extract heading text & color
+    const headingText = headingHolder.textContent.trim();
+    const textColor = colorHolder.textContent.trim();
 
-  info.append(nameEl, priceEl);
+    // 3f. Build the overlaid content
+    const content = document.createElement('div');
+    content.className = 'countrycard-content';
+    content.style.color = textColor;
 
-  // 5. Clear placeholders and append the pieces
+    const h2 = document.createElement('h2');
+    h2.textContent = headingText;
+
+    const p = document.createElement('p');
+    p.textContent = 'Keep using your apps and social media without complications.';
+
+    content.append(h2, p);
+    li.append(content);
+
+    // 3g. Add this card to the UL
+    ul.append(li);
+  });
+
+  // 4. Replace original placeholders with our new structure
   block.textContent = '';
-  block.append(img, info);
+  block.append(ul);
 }
