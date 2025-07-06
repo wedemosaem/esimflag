@@ -348,7 +348,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Flag",
+        "label": "Image",
         "multi": false
       },
       {
@@ -366,7 +366,12 @@
 
       }
     ]
-  }
+  },
+
+  {
+    "id": "countryplan",
+    "fields": []
+  },
 
 
 
