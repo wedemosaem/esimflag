@@ -3,7 +3,7 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 10%);
 }
 
 .customcard-bg {
@@ -25,9 +25,9 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+  background: linear-gradient(to top, rgb(0 0 0 / 65%), transparent);
   color: white;            /* default, can be overridden inline */
-  z-index: 1;              /* ensure it’s atop the picture */
+  z-index: 1;              /* ensure it's atop the picture */
 }
 
 .customcard-content h2 {

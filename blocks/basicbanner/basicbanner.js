@@ -16,7 +16,7 @@ export default function decorate(block) {
   const picture = createOptimizedPicture(src, alt, false, [
     { width: '1200' },
     { width: '800' },
-    { width: '400' }
+    { width: '400' },
   ]);
   picture.classList.add('banner-bg');
 

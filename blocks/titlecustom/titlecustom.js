@@ -4,18 +4,18 @@ export default function decorate(block) {
   const placeholders = Array.from(block.querySelectorAll(':scope > div'));
   const titleDiv = placeholders[0];
   const colorDiv = placeholders[1];
-  const typeDiv  = placeholders[2];
+  const typeDiv = placeholders[2];
 
   // extract their values (with sensible defaults)
-  const titleText = titleDiv?.textContent.trim()    || '';
-  const colorHex  = colorDiv?.textContent.trim()    || '#000000';
-  const tagName   = (typeDiv?.textContent.trim()    || 'h2').toLowerCase();
+  const titleText = titleDiv?.textContent.trim() || '';
+  const colorHex = colorDiv?.textContent.trim() || '#000000';
+  const tagName = (typeDiv?.textContent.trim() || 'h2').toLowerCase();
 
   // build the heading
   const heading = document.createElement(tagName);
   heading.classList.add('titlecustom-heading');
   heading.textContent = titleText;
-  heading.style.color   = colorHex;
+  heading.style.color = colorHex;
 
   // replace the entire block with our new heading
   block.textContent = '';

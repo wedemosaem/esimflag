@@ -15,13 +15,8 @@
   --primary-color: rgb(255 234 3);
   --secondary-color: rgb(32 32 32);
 
-
-  /** DEMO: CHANGE OVERAL BACKGROUND COLOR**/
-  --background-color: white;
-  /* --background-color: #000; */
-
-
-
+  /** DEMO: CHANGE OVERAL BACKGROUND COLOR **/
+  --background-color: white;   /* --background-color: #000; */
   --light-color: rgb(235 235 235);
   --dark-color: var(--secondary-color);
   --text-color: var(--secondary-color);
@@ -88,12 +83,8 @@ body {
   background-color: var(--background-color);
   
   
-  /** DEMO: CHANGE OVERALL FONT COLOR**/
-  color: var(--text-color);
-  /* color: #FFF; */
-
-
-
+  /** DEMO: CHANGE OVERALL FONT COLOR **/
+  color: var(--text-color);   /* color: #FFF; */
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
@@ -130,11 +121,11 @@ h6 {
   line-height: 1.25;
   scroll-margin: 40px;
 }
-
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
 
 /* Add a partial yellow underline under H2 */
+
 /* h2::after {
   border-bottom: 2px solid var(--primary-color);
   content: "";
@@ -187,7 +178,7 @@ a:any-link {
   /* color: var(--link-color); */
   color: #FFF;
   text-decoration: none;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 a:hover {
@@ -217,10 +208,8 @@ button {
 
   /* WKND specific treatments */
   text-transform: uppercase;
-  /* background-color: var(--primary-color); */
-  /* color: var(--dark-color); */
-  background-color:#F0377D;
-  color: #FFF;
+  background-color:#F0377D; /* background-color: var(--primary-color); */
+  color: #FFF; /* color: var(--dark-color); */
   border-radius: 0;
 }
 

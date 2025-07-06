@@ -137,19 +137,12 @@ export default async function decorate(block) {
     navBrand.querySelector('img').setAttribute('loading', 'eager');
   }
 
-  // const brandLink = navBrand.querySelector('.button');
-  // if (brandLink) {
-  //   brandLink.className = '';
-  //   brandLink.closest('.button-container').className = '';
-  // }
-
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     // WKND: Remove Edge Delivery Services button containers and buttons from the nav sections links
     navSections.querySelectorAll('.button-container, .button').forEach((button) => {
       button.classList = '';
     });
-
 
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');

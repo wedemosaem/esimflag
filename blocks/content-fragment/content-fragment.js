@@ -1,65 +1,58 @@
 // put your AEM publish address here
 // this fixes having to manually change the AEM host here
-const AEM_HOST = checkDomain()
 
-function checkDomain(){
-  if (window.location.hostname.includes("hlx.page") || window.location.hostname.includes("localhost")){
-    return "https://publish-p157306-e1665625.adobeaemcloud.com/"    
-  }else{
-    return window.location.origin 
+function checkDomain() {
+  if (window.location.hostname.includes('hlx.page') || window.location.hostname.includes('localhost')) {
+    return 'https://publish-p157306-e1665625.adobeaemcloud.com/';
   }
+  return window.location.origin;
 }
 
-export default function decorate(block) {
+const AEM_HOST = checkDomain();
 
-  const slugDiv = block.querySelector('div:nth-child(1)'); 
+export default function decorate(block) {
+  const slugDiv = block.querySelector('div:nth-child(1)');
   const slugID = document.createElement('div');
   slugID.id = 'slug';
   slugDiv.replaceWith(slugID);
   slugID.innerHTML = `${slugDiv.innerHTML}`;
   const slug = slugID.textContent.trim();
-  
   const quoteDiv = block.querySelector('div:last-of-type');
   const adventureDiv = document.createElement('div');
-  adventureDiv.id = "adventure-" + slug; 
+  adventureDiv.id = `adventure-${slug}`;
   quoteDiv.replaceWith(adventureDiv);
 
+  fetch(`${AEM_HOST}/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=${slug}`)
+    .then((response) => response.json())
+    .then((response) => {
+      const { items } = response.data.adventureList;
+      const adventure = items[0];
+      const { _path: backgroundImage } = adventure.primaryImage;
+      document.getElementById(adventureDiv.id).innerHTML = `<section><img src='${AEM_HOST}${backgroundImage}'></section>`;
 
-fetch(AEM_HOST + '/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=' + slug)
-.then(response => response.json())
-.then(response => {
+      const { title: adventureTitle } = adventure;
+      document.getElementById(adventureDiv.id).innerHTML += `<section><h3>${adventureTitle}</h3></section>`;
 
-const backgroundImage = response.data.adventureList.items[0].primaryImage._path;
-document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + AEM_HOST + backgroundImage + "></section>";  
+      const { plaintext: adventureDesc } = adventure.description;
+      document.getElementById(adventureDiv.id).innerHTML += `<section>${adventureDesc}</section>`;
 
-const adventureTitle = response.data.adventureList.items[0].title;
-document.getElementById(adventureDiv.id).innerHTML += "<section><h3>"+ adventureTitle + "</h3></section>";
+      const { adventureType } = adventure;
+      document.getElementById(adventureDiv.id).innerHTML += `<section>Adventure Type: ${adventureType}</section>`;
 
-const adventureDesc = response.data.adventureList.items[0].description.plaintext;
-document.getElementById(adventureDiv.id).innerHTML += "<section>" + adventureDesc + "</section>";
+      const { tripLength } = adventure;
+      document.getElementById(adventureDiv.id).innerHTML += `<section>Trip Length: ${tripLength}</section>`;
 
-const adventureType = response.data.adventureList.items[0].adventureType;
-document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Adventure Type: " + adventureType + "</section>";
+      const { difficulty: tripDifficulty } = adventure;
+      document.getElementById(adventureDiv.id).innerHTML += `<section>Difficulty: ${tripDifficulty}</section>`;
 
-const tripLength = response.data.adventureList.items[0].tripLength;
-document.getElementById(adventureDiv.id).innerHTML += "<section>" +"Trip Length: " + tripLength + "</section>";
+      const { groupSize } = adventure;
+      document.getElementById(adventureDiv.id).innerHTML += `<section>Group Size: ${groupSize}</section>`;
 
-const tripDifficulty = response.data.adventureList.items[0].difficulty;
-document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Difficulty: " + tripDifficulty + "</section>";
-
-const groupSize = response.data.adventureList.items[0].groupSize;
-document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Group Size: " + groupSize + "</section>";
-
-const tripItinerary= response.data.adventureList.items[0].itinerary.html;
-document.getElementById(adventureDiv.id).innerHTML += "<section>" + "Itinerary: </br>" + tripItinerary + "</section>";
-
-})
-.catch(error => {
-  console.log('Error fetching data:', error);
-});
-
+      const { html: tripItinerary } = adventure.itinerary;
+      document.getElementById(adventureDiv.id).innerHTML += `<section>Itinerary: <br/>${tripItinerary}</section>`;
+    })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.log('Error fetching data:', error);
+    });
 }
-
-
-
-

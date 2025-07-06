@@ -1,17 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
-  
+  /*** DEMO:  CHANGE HEADER COLOR ***/
+  background-color: var(--background-color); /* background-color: white; */
   
   /*** DEMO:  CHANGE HEADER COLOR ***/
-  background-color: var(--background-color);
-    /* background-color: white; */
-
-
-/*** DEMO:  CHANGE HEADER COLOR ***/
-  /* color: #FFF; */
-  color: var(--text-color);
-
-
+  color: var(--text-color);    /* color: #FFF; */
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -257,8 +250,7 @@ header nav .nav-sections ul > li > ul > li {
     width: 200px;
     top: 150%;
     padding: 16px;
-    /* background-color: var(--light-color); */
-    background-color: #000;
+    background-color: #000;  /* background-color: var(--light-color); */
     white-space: initial;
   }
 
@@ -313,29 +305,16 @@ header .header.block nav {
   .nav-sections {
     /* Update menu items display properties */
     a {
-      /* text-transform: uppercase; */
-
-    text-transform: capitalize;
-
-
-
+      text-transform: capitalize;
       background-color: transparent;
-
-      
       
       /*** DEMO:  CHANGE HEADER FONT COLOR ***/
-      color: var(--text-color);
-      /* color: #FFF; */
-
-
-
-
-
+      color: var(--text-color);    /* color: #FFF; */
       font-weight: 500;
       font-size: var(--body-font-size-s);
 
       &:hover {
-        background-color: auto;
+        background-color: transparent;
       }
     }
 
@@ -355,12 +334,4 @@ header .header.block nav {
        }
     }
   }
-
-
-
-
-
-
-
-
-  
+}
