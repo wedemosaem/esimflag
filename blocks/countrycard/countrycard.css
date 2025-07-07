@@ -1,6 +1,6 @@
-/* countrycards.css */
+/* countrycard.css */
 
-.countrycards ul {
+.block.countrycard ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@
   grid-gap: 24px;
 }
 
-.countrycards li {
+.block.countrycard li {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
@@ -17,7 +17,7 @@
 }
 
 /* background <picture> */
-.countrycards .countrycards-bg {
+.block.countrycard .countrycard-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@
   line-height: 0;
 }
 
-.countrycards .countrycards-bg img {
+.block.countrycard .countrycard-bg img {
   display: block;
   width: 100%;
   height: 100%;
@@ -36,24 +36,24 @@
 }
 
 /* text overlay */
-.countrycards .countrycard-content {
+.block.countrycard .countrycard-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 20px;
   background: linear-gradient(to top, rgb(0 0 0 / 65%), transparent);
-  color: white; /* overridden inline by JS if needed */
+  color: white; /* overridden inline if needed */
   z-index: 1;
 }
 
-.countrycards .countrycard-content h2 {
+.block.countrycard .countrycard-content h2 {
   margin: 0 0 10px;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
-.countrycards .countrycard-content p {
+.block.countrycard .countrycard-content p {
   margin: 0;
   font-size: 0.95rem;
 }
